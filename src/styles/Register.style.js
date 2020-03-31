@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import color from '../colors/Register.color';
+import dimention from '../dimensions/Register.dimension';
 
 export default StyleSheet.create({
   containerVertical: {
@@ -13,8 +14,8 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   image: {
-    width: 480,
-    height: 200,
+    width: dimention.image.imageWidth,
+    height: dimention.image.imageHeight,
     flexDirection: 'row',
     justifyContent: 'center',
     resizeMode: 'stretch',
