@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
-import RegisterComponent from './src/components/Registers/Register.component';
+import RegisterComponent from './src/components/Register.component';
 
 export default class App extends React.Component {
   render() {
