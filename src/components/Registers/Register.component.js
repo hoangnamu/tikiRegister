@@ -7,6 +7,7 @@ import {
   ScrollView,
   Image,
   CheckBox,
+  Button,
 } from 'react-native';
 
 export default class RegisterComponent extends Component {
@@ -22,8 +23,14 @@ export default class RegisterComponent extends Component {
           <TextInput style={style.textInput} placeholder="Số điện thoại" />
           <TextInput style={style.textInput} placeholder="Email" />
           <TextInput style={style.textInput} placeholder="Mật khẩu" />
-          <View style={style.containerHorizontal}>
-            <Text >check box here</Text>
+          <View style={style.checkBoxContainer}>
+            <CheckBox style={style.checkBoxStyle} />
+            <Text style={style.checkBoxTile}>Nam</Text>
+            <CheckBox style={style.checkBoxStyle} />
+            <Text style={style.checkBoxTile}>Nữ</Text>
+          </View>
+          <View style={style.registerButtonContainer}>
+            <Button title="ĐĂNG KÍ" color="" />
           </View>
         </View>
       </ScrollView>
@@ -36,9 +43,11 @@ const style = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
   },
-  containerHorizontal: {
+  checkBoxContainer: {
     flex: 1,
     flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
   image: {
     width: 480,
@@ -54,6 +63,14 @@ const style = StyleSheet.create({
     borderBottomWidth: 1,
   },
   checkBoxStyle: {
-    borderRadius: 3,
+    margin: 5,
+  },
+  checkBoxTile: {
+    fontSize: 15,
+    color: 'grey',
+  },
+  registerButtonContainer: {
+    marginTop: 30,
+    margin: 10,
   },
 });
