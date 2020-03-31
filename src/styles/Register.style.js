@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import color from '../colors/Register.color';
 
 export default StyleSheet.create({
   containerVertical: {
@@ -21,7 +22,7 @@ export default StyleSheet.create({
   textInput: {
     flex: 1,
     margin: 10,
-    borderColor: 'grey',
+    borderColor: color.textInput,
     borderBottomWidth: 1,
   },
   checkBoxStyle: {
@@ -29,7 +30,7 @@ export default StyleSheet.create({
   },
   checkBoxTile: {
     fontSize: 15,
-    color: 'grey',
+    color: color.textInput,
   },
   registerButtonContainer: {
     flex: 1,

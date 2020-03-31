@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import style from '../styles/Register.style';
 import registerString from '../strings/Register.string';
+import registerColor from '../colors/Register.color';
 
 export default class RegisterComponent extends Component {
   render() {
@@ -44,7 +45,7 @@ export default class RegisterComponent extends Component {
             <Text style={style.checkBoxTile}>{registerString.femaleText}</Text>
           </View>
           <View style={style.registerButtonContainer}>
-            <Button title={registerString.registerButtonText} color="#e84343" />
+            <Button title={registerString.registerButtonText} color={registerColor.registerButtonColor} />
           </View>
         </View>
       </ScrollView>
