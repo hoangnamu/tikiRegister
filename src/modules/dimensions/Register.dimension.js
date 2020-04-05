@@ -1,6 +1,6 @@
 export default {
   image: {
-    imageWidth: 480,
+    imageWidth: 400,
     imageHeight: 200,
   },
 };

@@ -6,4 +6,10 @@ export default {
   maleText: 'Nam',
   femaleText: 'Nữ',
   registerButtonText: 'ĐĂNG KÍ',
+  dayOfBirth: 'Ngày sinh',
+  calendarConfirm: 'OK',
+  calendarCancel: 'Cancel',
+  calendarTitle: 'Ngày sinh',
+  calendarFormat: 'DD-MM-YYYY',
+  calendarMinDate: '01-01-1990',
 };

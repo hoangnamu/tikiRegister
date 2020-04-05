@@ -1,17 +1,18 @@
 import React, {Component} from 'react';
 import {
-  StyleSheet,
-  Text,
   TextInput,
   View,
   ScrollView,
   Image,
   CheckBox,
   Button,
+  Alert,
+  Text,
 } from 'react-native';
-import style from '../styles/Register.style';
+import style from '../view/Register.style';
 import registerString from '../strings/Register.string';
 import registerColor from '../colors/Register.color';
+import MyDatePicker from './Datepicker.component';
 
 export default class RegisterComponent extends Component {
   render() {
@@ -38,16 +39,20 @@ export default class RegisterComponent extends Component {
             style={style.textInput}
             placeholder={registerString.password}
           />
-          <View style={style.checkBoxContainer}>
+          <MyDatePicker />
+
+          {/* <View style={style.checkBoxContainer}>
             <CheckBox style={style.checkBoxStyle} />
             <Text style={style.checkBoxTile}>{registerString.maleText}</Text>
             <CheckBox style={style.checkBoxStyle} />
             <Text style={style.checkBoxTile}>{registerString.femaleText}</Text>
-          </View>
+          </View> */}
+
           <View style={style.registerButtonContainer}>
             <Button
               title={registerString.registerButtonText}
               color={registerColor.registerButtonColor}
+              onPress={() => Alert.alert('afafkalkf;lasl;k')}
             />
           </View>
         </View>

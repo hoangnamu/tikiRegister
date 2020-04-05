@@ -38,4 +38,8 @@ export default StyleSheet.create({
     marginTop: 30,
     margin: 20,
   },
+  dobText: {
+    margin: 5,
+    color: color.textInput,
+  },
 });
