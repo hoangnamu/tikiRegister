@@ -1,4 +1,4 @@
-import BaseAPI from '../services/BaseAPI';
+import BaseAPI from '../../core/services/BaseAPI';
 
 class UsersAPI {
   async getUsers() {

@@ -1,19 +1,9 @@
 import React, {Component} from 'react';
-import {
-  TextInput,
-  View,
-  ScrollView,
-  Image,
-  CheckBox,
-  Button,
-  Alert,
-  Text,
-} from 'react-native';
+import {Button, Image, ScrollView, TextInput, View,} from 'react-native';
 import style from './Register.style';
 import registerString from '../resources/strings/Register.string';
 import registerColor from '../resources/colors/Register.color';
 import MyDatePicker from './Datepicker.component';
-import Axios from 'axios';
 import UsersAPI from '../repository/UsersAPI';
 
 export default class RegisterComponent extends Component {
@@ -47,46 +37,46 @@ export default class RegisterComponent extends Component {
 
   render() {
     return (
-      <ScrollView>
-        <View style={style.containerVertical}>
-          <Image
-            source={require('../resources/image/wallpaper.png')}
-            style={style.image}
-          />
-          <TextInput
-            style={style.textInput}
-            placeholder={registerString.name}
-          />
-          <TextInput
-            style={style.textInput}
-            placeholder={registerString.phoneNumber}
-          />
-          <TextInput
-            style={style.textInput}
-            placeholder={registerString.email}
-          />
-          <TextInput
-            style={style.textInput}
-            placeholder={registerString.password}
-          />
-          <MyDatePicker />
-          {/* <View style={style.checkBoxContainer}>
+        <ScrollView>
+          <View style={style.containerVertical}>
+            <Image
+                source={require('../resources/image/wallpaper.png')}
+                style={style.image}
+            />
+            <TextInput
+                style={style.textInput}
+                placeholder={registerString.name}
+            />
+            <TextInput
+                style={style.textInput}
+                placeholder={registerString.phoneNumber}
+            />
+            <TextInput
+                style={style.textInput}
+                placeholder={registerString.email}
+            />
+            <TextInput
+                style={style.textInput}
+                placeholder={registerString.password}
+            />
+            <MyDatePicker/>
+            {/* <View style={style.checkBoxContainer}>
             <CheckBox style={style.checkBoxStyle} />
             <Text style={style.checkBoxTile}>{registerString.maleText}</Text>
             <CheckBox style={style.checkBoxStyle} />
             <Text style={style.checkBoxTile}>{registerString.femaleText}</Text>
           </View> */}
-          <View style={style.registerButtonContainer}>
-            <Button
-              title={registerString.registerButtonText}
-              color={registerColor.registerButtonColor}
-              onPress={() => {
-                this.onBtnPress();
-              }}
-            />
+            <View style={style.registerButtonContainer}>
+              <Button
+                  title={registerString.registerButtonText}
+                  color={registerColor.registerButtonColor}
+                  onPress={() => {
+                    this.onBtnPress();
+                  }}
+              />
+            </View>
           </View>
-        </View>
-      </ScrollView>
+        </ScrollView>
     );
   }
 }
