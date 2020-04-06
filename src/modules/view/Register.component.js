@@ -13,8 +13,36 @@ import style from '../view/Register.style';
 import registerString from '../strings/Register.string';
 import registerColor from '../colors/Register.color';
 import MyDatePicker from './Datepicker.component';
+import Axios from 'axios';
 
 export default class RegisterComponent extends Component {
+  state = {
+    isLoading: true,
+    users: 'empty',
+  };
+  fetchUser() {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(data => this.setState({users: data, isLoading: false}))
+      .catch(error => {
+        console.error(error);
+      });
+  }
+  async fetchWithAsync() {
+    try {
+      await Axios.get('https://jsonplaceholder.typicode.com/users').then(
+        response => this.setState({users: response.data, isLoading: false}),
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  onBtnPress() {
+    this.fetchWithAsync();
+    console.log('print data : ');
+    console.log(this.state.users);
+  }
+
   render() {
     return (
       <ScrollView>
@@ -40,19 +68,19 @@ export default class RegisterComponent extends Component {
             placeholder={registerString.password}
           />
           <MyDatePicker />
-
           {/* <View style={style.checkBoxContainer}>
             <CheckBox style={style.checkBoxStyle} />
             <Text style={style.checkBoxTile}>{registerString.maleText}</Text>
             <CheckBox style={style.checkBoxStyle} />
             <Text style={style.checkBoxTile}>{registerString.femaleText}</Text>
           </View> */}
-
           <View style={style.registerButtonContainer}>
             <Button
               title={registerString.registerButtonText}
               color={registerColor.registerButtonColor}
-              onPress={() => Alert.alert('afafkalkf;lasl;k')}
+              onPress={() => {
+                this.onBtnPress();
+              }}
             />
           </View>
         </View>

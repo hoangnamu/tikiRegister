@@ -14,7 +14,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={containerStyles}>
-        <RegisterComponent />
+        <RegisterComponent></RegisterComponent>
       </View>
     );
   }
