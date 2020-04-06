@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
-import color from '../colors/Register.color';
-import dimention from '../dimensions/Register.dimension';
+import color from '../resources/colors/Register.color';
+import dimention from '../resources/dimensions/Register.dimension';
 
 export default StyleSheet.create({
   containerVertical: {

@@ -9,36 +9,38 @@ import {
   Alert,
   Text,
 } from 'react-native';
-import style from '../view/Register.style';
-import registerString from '../strings/Register.string';
-import registerColor from '../colors/Register.color';
+import style from './Register.style';
+import registerString from '../resources/strings/Register.string';
+import registerColor from '../resources/colors/Register.color';
 import MyDatePicker from './Datepicker.component';
 import Axios from 'axios';
+import UsersAPI from '../repository/UsersAPI';
 
 export default class RegisterComponent extends Component {
   state = {
     isLoading: true,
     users: 'empty',
   };
-  fetchUser() {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(data => this.setState({users: data, isLoading: false}))
-      .catch(error => {
-        console.error(error);
-      });
-  }
-  async fetchWithAsync() {
-    try {
-      await Axios.get('https://jsonplaceholder.typicode.com/users').then(
-        response => this.setState({users: response.data, isLoading: false}),
-      );
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  onBtnPress() {
-    this.fetchWithAsync();
+  // fetchUser() {
+  //   fetch('https://jsonplaceholder.typicode.com/users')
+  //     .then(response => response.json())
+  //     .then(data => this.setState({users: data, isLoading: false}))
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  // }
+  // async fetchWithAsync() {
+  //   try {
+  //     await Axios.get('https://jsonplaceholder.typicode.com/users').then(
+  //       response => this.setState({users: response.data, isLoading: false}),
+  //     );
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // }
+  async onBtnPress() {
+    const getData = await new UsersAPI().getUsers();
+    this.setState({users: getData.data, isLoading: false});
     console.log('print data : ');
     console.log(this.state.users);
   }
@@ -48,7 +50,7 @@ export default class RegisterComponent extends Component {
       <ScrollView>
         <View style={style.containerVertical}>
           <Image
-            source={require('../image/wallpaper.png')}
+            source={require('../resources/image/wallpaper.png')}
             style={style.image}
           />
           <TextInput

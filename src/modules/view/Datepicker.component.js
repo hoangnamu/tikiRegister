@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import DatePicker from 'react-native-datepicker';
 import style from '../view/Register.style';
-import registerString from '../strings/Register.string';
+import registerString from '../resources/strings/Register.string';
 
 function getToday() {
   var today = new Date();
